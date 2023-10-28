@@ -7,7 +7,7 @@ exports.responseCHat = async (prompt) => {
 
 
         const chatCompletion = await openai.chat.completions.create({
-            messages: [{ role: 'user', content: ` is <${prompt}> type of food or used in food or recipe? reply only  true if yes or false if no` }],
+            messages: [{ role: 'user', content: ` is ${prompt.toUpperCase()}   keyword can use in food , recip world  in Arabic word or english ?answar only  true or false ` }],
             model: 'gpt-3.5-turbo',
             max_tokens: 30,
 
