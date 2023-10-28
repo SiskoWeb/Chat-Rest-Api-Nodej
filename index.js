@@ -1,9 +1,10 @@
 const express = require("express");
 const { responseCHat } = require("./chatService");
 require("dotenv").config();
-
+const cors = require('cors');
 
 const app = express();
+app.use(cors()); // This allows requests from any origin.
 
 app.use(express.json());
 app.post("/checker", async (req, res) => {
