@@ -4,7 +4,11 @@ require("dotenv").config();
 const cors = require('cors');
 
 const app = express();
-app.use(cors()); // This allows requests from any origin.
+app.use(cors({
+    origin: '*',
+    methods: 'GET,POST',
+    allowedHeaders: 'Content-Type',
+}));
 
 app.use(express.json());
 app.post("/checker", async (req, res) => {
