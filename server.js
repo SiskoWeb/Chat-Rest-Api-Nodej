@@ -19,7 +19,8 @@ app.post("/checker", async (req, res) => {
 
         });
 
-        
+        console.log(chatCompletion.choices);
+        console.log(chatCompletion.choices[0].message.content[0]);
 
         return res.status(200).json({
             success: true,
