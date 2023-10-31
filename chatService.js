@@ -7,7 +7,7 @@ exports.responseCHat = async (prompt) => {
 
 
         const chatCompletion = await openai.chat.completions.create({
-            messages: [{ role: 'user', content: `Is "${prompt}" a keyword used in the culinary or recipe world OR foor, either in Arabic, English, or Darija Maghribia? True or False?` }],
+            messages: [{ role: 'user', content: `Is "${prompt}" a keyword used in the culinary or recipe world OR fooD, either in Arabic, English, or Darija Maghribia? True or False?` }],
             model: 'gpt-3.5-turbo',
             // temperature: 0.2,
             temperature: 0,
