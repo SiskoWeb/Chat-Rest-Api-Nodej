@@ -13,6 +13,12 @@ app.use(cors({
 app.use(express.json({ extended: false }));
 app.post("/checker", async (req, res) => {
     const { prompt } = req.body;
+
+    if (!prompt) {
+
+        return res.status(400).json("prompt is required")
+    }
+
     const response = await responseCHat(prompt)
     if (response.success) {
         return res.status(200).json(response)
