@@ -3,14 +3,14 @@ const { responseCHat } = require("./chatService");
 require("dotenv").config();
 const cors = require('cors');
 
-app.use(express.json({ extended: false }));
+const app = express();
 app.use(cors({
     origin: '*',
     methods: 'GET,POST',
     allowedHeaders: 'Content-Type',
 }));
 
-app.use(express.json());
+app.use(express.json({ extended: false }));
 app.post("/checker", async (req, res) => {
     const { prompt } = req.body;
     const response = await responseCHat(prompt)
